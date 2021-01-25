@@ -26,4 +26,8 @@ int main() {
     int vec_d[5] = {8, 7, 2, 11, 18};
     quick_sort(vec_d, 5);
     print_vec(vec_d, 5);
+    printf("merge sort:\n");
+    int vec_e[5] = {8, 7, 2, 11, 18};
+    merge_sort(vec_e, 5);
+    print_vec(vec_e, 5);
 }

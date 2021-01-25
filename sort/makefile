@@ -32,5 +32,8 @@ sel_srt:
 qck_srt:
 	$(BUILDSTR) -c $(SRC)/quick_sort.c -o $(BIN)/qck_srt
 
-example: ins_srt bub_srt sel_srt qck_srt
-	$(BUILDSTR) $(SRC)/example.c $(BIN)/ins_srt $(BIN)/bub_srt $(BIN)/sel_srt $(BIN)/qck_srt -o $(BIN)/example
+mrg_sort:
+	$(BUILDSTR) -c $(SRC)/merge_sort.c -o $(BIN)/mrg_sort
+
+example: ins_srt bub_srt sel_srt qck_srt mrg_sort
+	$(BUILDSTR) $(SRC)/example.c $(BIN)/ins_srt $(BIN)/bub_srt $(BIN)/sel_srt $(BIN)/qck_srt $(BIN)/mrg_sort -o $(BIN)/example
