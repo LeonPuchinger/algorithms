@@ -17,4 +17,8 @@ int main() {
     int vec_b[5] = {8, 7, 2, 11, 18};
     bubble_sort(vec_b, 5);
     print_vec(vec_b, 5);
+    printf("selection sort:\n");
+    int vec_c[5] = {8, 7, 2, 11, 18};
+    bubble_sort(vec_c, 5);
+    print_vec(vec_c, 5);
 }

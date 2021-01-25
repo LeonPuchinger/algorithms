@@ -26,5 +26,8 @@ insertion_sort:
 bubble_sort:
 	$(BUILDSTR) -c $(SRC)/bubble_sort.c -o $(BIN)/bubble_sort
 
-example: insertion_sort bubble_sort
-	$(BUILDSTR) $(SRC)/example.c $(BIN)/insertion_sort $(BIN)/bubble_sort -o $(BIN)/example
+selection_sort:
+	$(BUILDSTR) -c $(SRC)/selection_sort.c -o $(BIN)/selection_sort
+
+example: insertion_sort bubble_sort selection_sort
+	$(BUILDSTR) $(SRC)/example.c $(BIN)/insertion_sort $(BIN)/bubble_sort $(BIN)/selection_sort -o $(BIN)/example
