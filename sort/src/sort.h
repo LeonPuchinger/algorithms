@@ -9,5 +9,6 @@ void selection_sort(int *vec, int size);
 //advanced sorting algorithms
 void quick_sort(int *vec, int size);
 void merge_sort(int *vec, int size);
+void heap_sort(int *vec, int size);
 
 #endif

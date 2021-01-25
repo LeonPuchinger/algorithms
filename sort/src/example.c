@@ -30,4 +30,8 @@ int main() {
     int vec_e[5] = {8, 7, 2, 11, 18};
     merge_sort(vec_e, 5);
     print_vec(vec_e, 5);
+    printf("heap sort:\n");
+    int vec_f[5] = {8, 7, 2, 11, 18};
+    heap_sort(vec_f, 5);
+    print_vec(vec_f, 5);
 }
