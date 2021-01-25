@@ -20,14 +20,17 @@ setup:
 
 build: example
 
-insertion_sort:
-	$(BUILDSTR) -c $(SRC)/insertion_sort.c -o $(BIN)/insertion_sort
+ins_srt:
+	$(BUILDSTR) -c $(SRC)/insertion_sort.c -o $(BIN)/ins_srt
 
-bubble_sort:
-	$(BUILDSTR) -c $(SRC)/bubble_sort.c -o $(BIN)/bubble_sort
+bub_srt:
+	$(BUILDSTR) -c $(SRC)/bubble_sort.c -o $(BIN)/bub_srt
 
-selection_sort:
-	$(BUILDSTR) -c $(SRC)/selection_sort.c -o $(BIN)/selection_sort
+sel_srt:
+	$(BUILDSTR) -c $(SRC)/selection_sort.c -o $(BIN)/sel_srt
 
-example: insertion_sort bubble_sort selection_sort
-	$(BUILDSTR) $(SRC)/example.c $(BIN)/insertion_sort $(BIN)/bubble_sort $(BIN)/selection_sort -o $(BIN)/example
+qck_srt:
+	$(BUILDSTR) -c $(SRC)/quick_sort.c -o $(BIN)/qck_srt
+
+example: ins_srt bub_srt sel_srt qck_srt
+	$(BUILDSTR) $(SRC)/example.c $(BIN)/ins_srt $(BIN)/bub_srt $(BIN)/sel_srt $(BIN)/qck_srt -o $(BIN)/example
