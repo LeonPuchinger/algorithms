@@ -18,10 +18,13 @@ all: setup build
 setup:
 	mkdir -p $(BIN)
 
-build: test
+build: example
 
 insertion_sort:
 	$(BUILDSTR) -c $(SRC)/insertion_sort.c -o $(BIN)/insertion_sort
 
-test: insertion_sort
-	$(BUILDSTR) $(SRC)/test.c $(BIN)/insertion_sort -o $(BIN)/test
+bubble_sort:
+	$(BUILDSTR) -c $(SRC)/bubble_sort.c -o $(BIN)/bubble_sort
+
+example: insertion_sort bubble_sort
+	$(BUILDSTR) $(SRC)/example.c $(BIN)/insertion_sort $(BIN)/bubble_sort -o $(BIN)/example

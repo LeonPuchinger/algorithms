@@ -9,7 +9,12 @@ void print_vec(int *vec, int size) {
 }
 
 int main() {
-    int vec[5] = {8, 7, 2, 11, 18};
-    insertion_sort(vec, 5);
-    print_vec(vec, 5);
+    printf("insertion sort:\n");
+    int vec_a[5] = {8, 7, 2, 11, 18};
+    insertion_sort(vec_a, 5);
+    print_vec(vec_a, 5);
+    printf("bubble sort:\n");
+    int vec_b[5] = {8, 7, 2, 11, 18};
+    bubble_sort(vec_b, 5);
+    print_vec(vec_b, 5);
 }
