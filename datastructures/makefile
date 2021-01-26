@@ -23,5 +23,8 @@ build: example
 stack:
 	$(BUILDSTR) -c $(SRC)/stack.c -o $(BIN)/stack.o
 
-example: stack
-	$(BUILDSTR) $(SRC)/example.c $(BIN)/stack.o -o $(BIN)/example
+queue:
+	$(BUILDSTR) -c $(SRC)/queue.c -o $(BIN)/queue.o
+
+example: stack queue
+	$(BUILDSTR) $(SRC)/example.c $(BIN)/stack.o $(BIN)/queue.o -o $(BIN)/example

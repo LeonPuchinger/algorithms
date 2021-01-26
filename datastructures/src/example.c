@@ -1,4 +1,5 @@
 #include "stack.h"
+#include "queue.h"
 #include <stdio.h>
 
 int main() {
@@ -10,4 +11,11 @@ int main() {
     printf("%d is now on top of stack\n", peek(stack));
     printf("stack is of size %d now\n", size(stack));
     free_stack(stack);
+
+    Queue *queue = new_queue();
+    enqueue(queue, 1);
+    enqueue(queue, 2);
+    enqueue(queue, 3);
+    printf("dequeued %d from queue\n", dequeue(queue));
+    free_queue(queue);
 }
