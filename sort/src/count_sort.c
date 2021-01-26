@@ -17,4 +17,5 @@ void count_sort(int *vec, int size, int range_from, int range_to) {
             j++;
         }
     }
+    free(counter);
 }
