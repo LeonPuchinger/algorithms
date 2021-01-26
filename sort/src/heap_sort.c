@@ -1,6 +1,6 @@
 #include "sort.h"
 
-void _swap(int *a, int *b) {
+static void swap(int *a, int *b) {
     int temp = *a;
     *a = *b;
     *b = temp;
@@ -29,7 +29,7 @@ void heapify(int *heap, int f, int l, int root) {
         max = right;
     }
     if (max != root) {
-        _swap(&heap[max], &heap[root]);
+        swap(&heap[max], &heap[root]);
         heapify(heap, f, l, max);
     }
 }
@@ -43,7 +43,7 @@ void build_heap(int *vec, int f, int l) {
 void _heap_sort(int *vec, int f, int l) {
     build_heap(vec, f, l);
     for (int i = l; i > f; i--) {
-        _swap(&vec[f], &vec[i]);
+        swap(&vec[f], &vec[i]);
         heapify(vec, f, i - 1, f);
     }
 }
