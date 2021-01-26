@@ -39,4 +39,8 @@ int main() {
     int vec_g[5] = {8, 7, 2, 11, 18};
     count_sort(vec_g, 5, 2, 18);
     print_vec(vec_g, 5);
+    printf("map sort:\n");
+    int vec_h[5] = {8, 7, 2, 11, 18};
+    map_sort(vec_h, 5, 2);
+    print_vec(vec_h, 5);
 }
