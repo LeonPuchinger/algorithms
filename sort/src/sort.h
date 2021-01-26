@@ -11,4 +11,7 @@ void quick_sort(int *vec, int size);
 void merge_sort(int *vec, int size);
 void heap_sort(int *vec, int size);
 
+//specialized sorting algorithms
+void count_sort(int *vec, int size, int range_from, int range_to);
+
 #endif

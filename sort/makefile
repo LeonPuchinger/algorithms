@@ -33,10 +33,14 @@ qck_srt:
 	$(BUILDSTR) -c $(SRC)/quick_sort.c -o $(BIN)/qck_srt
 
 mrg_srt:
-	$(BUILDSTR) -c $(SRC)/merge_sort.c -o $(BIN)/mrg_sort
+	$(BUILDSTR) -c $(SRC)/merge_sort.c -o $(BIN)/mrg_srt
 
 heap_srt:
-	$(BUILDSTR) -c $(SRC)/heap_sort.c -o $(BIN)/heap_sort
+	$(BUILDSTR) -c $(SRC)/heap_sort.c -o $(BIN)/heap_srt
 
-example: ins_srt bub_srt sel_srt qck_srt mrg_srt heap_srt
-	$(BUILDSTR) $(SRC)/example.c $(BIN)/ins_srt $(BIN)/bub_srt $(BIN)/sel_srt $(BIN)/qck_srt $(BIN)/mrg_sort $(BIN)/heap_sort -o $(BIN)/example
+cnt_srt:
+	$(BUILDSTR) -c $(SRC)/count_sort.c -o $(BIN)/cnt_srt
+
+example: ins_srt bub_srt sel_srt qck_srt mrg_srt heap_srt cnt_srt
+	$(BUILDSTR) $(SRC)/example.c $(BIN)/ins_srt $(BIN)/bub_srt $(BIN)/sel_srt $(BIN)/qck_srt \
+		$(BIN)/mrg_srt $(BIN)/heap_srt $(BIN)/cnt_srt -o $(BIN)/example

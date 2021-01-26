@@ -34,4 +34,9 @@ int main() {
     int vec_f[5] = {8, 7, 2, 11, 18};
     heap_sort(vec_f, 5);
     print_vec(vec_f, 5);
+
+    printf("count sort:\n");
+    int vec_g[5] = {8, 7, 2, 11, 18};
+    count_sort(vec_g, 5, 2, 18);
+    print_vec(vec_g, 5);
 }
