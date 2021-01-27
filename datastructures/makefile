@@ -26,5 +26,8 @@ stack:
 queue:
 	$(BUILDSTR) -c $(SRC)/queue.c -o $(BIN)/queue.o
 
-example: stack queue
-	$(BUILDSTR) $(SRC)/example.c $(BIN)/stack.o $(BIN)/queue.o -o $(BIN)/example
+ll:
+	$(BUILDSTR) -c $(SRC)/linked_list.c -o $(BIN)/ll.o
+
+example: stack queue ll
+	$(BUILDSTR) $(SRC)/example.c $(BIN)/stack.o $(BIN)/queue.o $(BIN)/ll.o -o $(BIN)/example

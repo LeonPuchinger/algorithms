@@ -11,9 +11,9 @@ Queue *new_queue() {
 void free_queue(Queue *queue) {
     if (queue->head != NULL) {
         queue->tail->next = NULL;
-        Node *n = queue->head;
+        Queue_Node *n = queue->head;
         while (n != NULL) {
-            Node *next = n->next;
+            Queue_Node *next = n->next;
             free(n);
             n = next;
         }
@@ -21,7 +21,7 @@ void free_queue(Queue *queue) {
     free(queue);
 }
 
-void _enqueue(Queue *queue, Node *node) {
+void _enqueue(Queue *queue, Queue_Node *node) {
     if (queue->head == NULL) {
         queue->head = node;
         queue->tail= node;
@@ -34,13 +34,13 @@ void _enqueue(Queue *queue, Node *node) {
 }
 
 void enqueue(Queue *queue, int i) {
-    Node *n = calloc(1, sizeof(Node));
+    Queue_Node *n = calloc(1, sizeof(Queue_Node));
     n->value = i;
     _enqueue(queue, n);
 }
 
-Node *_dequeue(Queue *queue) {
-    Node *n = queue->head;
+Queue_Node *_dequeue(Queue *queue) {
+    Queue_Node *n = queue->head;
     if (queue->head != queue->tail) {
         queue->tail->next = n->next;
         queue->head = n->next;
@@ -52,7 +52,7 @@ Node *_dequeue(Queue *queue) {
 }
 
 int dequeue(Queue *queue) {
-    Node *n = _dequeue(queue);
+    Queue_Node *n = _dequeue(queue);
     int i;
     if (n == NULL) i = 0;
     else i = n->value;

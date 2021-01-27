@@ -1,5 +1,6 @@
 #include "stack.h"
 #include "queue.h"
+#include "linked_list.h"
 #include <stdio.h>
 
 int main() {
@@ -18,4 +19,20 @@ int main() {
     enqueue(queue, 3);
     printf("dequeued %d from queue\n", dequeue(queue));
     free_queue(queue);
+
+    List *list = new_list();
+    append(list, 1);
+    append(list, 2);
+    append(list, 3);
+    printf("the list is now: ");
+    print(list);
+    int res = delete(list, 2);
+    if (res) {
+        printf("2 was removed from the list\n");
+    } else {
+        printf("2 was not found and could not be removed from the list\n");
+    }
+    printf("the list is now: ");
+    print(list);
+    free_list(list);
 }

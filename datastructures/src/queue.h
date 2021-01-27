@@ -1,13 +1,13 @@
 #ifndef QUEUE_H
 #define QUEUE_H
 
-typedef struct _node {
-    struct _node *next;
+typedef struct queue_node {
+    struct queue_node *next;
     int value;
-} Node;
+} Queue_Node;
 
 typedef struct {
-    Node *head, *tail;
+    Queue_Node *head, *tail;
 } Queue;
 
 Queue *new_queue();
