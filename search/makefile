@@ -26,5 +26,8 @@ bin_tree:
 avl_tree:
 	$(BUILDSTR) -c $(SRC)/avl_tree.c -o $(BIN)/avl_tree.o
 
-example: bin_tree avl_tree
-	$(BUILDSTR) $(BIN)/bin_search_tree.o $(BIN)/avl_tree.o $(SRC)/example.c -o $(BIN)/example
+skiplist:
+	$(BUILDSTR) -c $(SRC)/skiplist.c -o $(BIN)/skiplist.o
+
+example: bin_tree avl_tree skiplist
+	$(BUILDSTR) $(BIN)/bin_search_tree.o $(BIN)/avl_tree.o $(BIN)/skiplist.o $(SRC)/example.c -o $(BIN)/example

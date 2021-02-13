@@ -1,5 +1,6 @@
 #include "bin_search_tree.h"
 #include "avl_tree.h"
+#include "skiplist.h"
 #include <stdio.h>
 
 int main() {
@@ -22,4 +23,15 @@ int main() {
     avl_tree_remove(avl_tree, 3);
     avl_tree_inorder(avl_tree);
     free_avl_tree(avl_tree);
+
+    Skiplist *skiplist = new_skiplist();
+    skiplist_insert(skiplist, 2);
+    skiplist_insert(skiplist, 3);
+    skiplist_insert(skiplist, 4);
+    skiplist_print(skiplist);
+    int found = skiplist_search(skiplist, 3);
+    if (found) printf("found 3 in skiplist!\n");
+    skiplist_remove(skiplist, 3);
+    skiplist_print(skiplist);
+    free_skiplist(skiplist);
 }
