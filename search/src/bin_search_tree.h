@@ -14,14 +14,14 @@ Bin_Tree *new_bin_tree();
 
 void free_bin_tree(Bin_Tree *tree);
 
-void print_preorder(Bin_Tree *tree);
+void bin_tree_preorder(Bin_Tree *tree);
 
-void print_inorder(Bin_Tree *tree);
+void bin_tree_inorder(Bin_Tree *tree);
 
-void print_postorder(Bin_Tree *tree);
+void bin_tree_postorder(Bin_Tree *tree);
 
-void insert_bin_tree(Bin_Tree *tree, int value);
+void bin_tree_insert(Bin_Tree *tree, int value);
 
-int remove_bin_tree(Bin_Tree *tree, int value);
+int bin_tree_remove(Bin_Tree *tree, int value);
 
 #endif

@@ -25,72 +25,72 @@ void free_bin_tree(Bin_Tree *tree) {
     free(tree);
 }
 
-void _print_preorder(Bin_Tree_Node *node) {
+void _bin_tree_preorder(Bin_Tree_Node *node) {
     printf("%d ", node->value);
     if (node->left != NULL) {
-        _print_preorder(node->left);
+        _bin_tree_preorder(node->left);
     }
     if (node->right != NULL) {
-        _print_preorder(node->right);
+        _bin_tree_preorder(node->right);
     }
 }
 
-void print_preorder(Bin_Tree *tree) {
+void bin_tree_preorder(Bin_Tree *tree) {
     if (tree->root != NULL) {
-        _print_preorder(tree->root);
+        _bin_tree_preorder(tree->root);
     }
     printf("\n");
 }
 
-void _print_inorder(Bin_Tree_Node *node) {
+void _bin_tree_inorder(Bin_Tree_Node *node) {
     if (node->left != NULL) {
-        _print_preorder(node->left);
+        _bin_tree_inorder(node->left);
     }
     printf("%d ", node->value);
     if (node->right != NULL) {
-        _print_preorder(node->right);
+        _bin_tree_inorder(node->right);
     }
 }
 
-void print_inorder(Bin_Tree *tree) {
+void bin_tree_inorder(Bin_Tree *tree) {
     if (tree->root != NULL) {
-        _print_inorder(tree->root);
+        _bin_tree_inorder(tree->root);
     }
     printf("\n");
 }
 
-void _print_postorder(Bin_Tree_Node *node) {
+void _bin_tree_postorder(Bin_Tree_Node *node) {
     if (node->left != NULL) {
-        _print_preorder(node->left);
+        _bin_tree_postorder(node->left);
     }
     if (node->right != NULL) {
-        _print_preorder(node->right);
+        _bin_tree_postorder(node->right);
     }
     printf("%d ", node->value);
 }
 
-void print_postorder(Bin_Tree *tree) {
+void bin_tree_postorder(Bin_Tree *tree) {
     if (tree->root != NULL) {
-        _print_postorder(tree->root);
+        _bin_tree_postorder(tree->root);
     }
     printf("\n");
 }
 
-void _insert_bin_tree(Bin_Tree_Node *root, Bin_Tree_Node *new) {
+void _bin_tree_insert(Bin_Tree_Node *root, Bin_Tree_Node *new) {
     if (new->value >= root->value) {
         if (root->right != NULL) {
-            return _insert_bin_tree(root->right, new);
+            return _bin_tree_insert(root->right, new);
         }
         root->right = new;
     } else {
         if (root->left != NULL) {
-            return _insert_bin_tree(root->left, new);
+            return _bin_tree_insert(root->left, new);
         }
         root->left = new;
     }
 }
 
-void insert_bin_tree(Bin_Tree *tree, int value) {
+void bin_tree_insert(Bin_Tree *tree, int value) {
     Bin_Tree_Node *new = malloc(sizeof(Bin_Tree_Node));
     new->value = value;
     new->left = NULL;
@@ -98,7 +98,7 @@ void insert_bin_tree(Bin_Tree *tree, int value) {
     if (tree->root == NULL) {
         tree->root = new;
     } else {
-        _insert_bin_tree(tree->root, new);
+        _bin_tree_insert(tree->root, new);
     }
 }
 
@@ -130,23 +130,23 @@ Bin_Tree_Node *_remove_node(Bin_Tree_Node *node) {
     return node;
 }
 
-int _remove_bin_tree(Bin_Tree_Node *node, Bin_Tree_Node **predecessor, int value) {
+int _bin_tree_remove(Bin_Tree_Node *node, Bin_Tree_Node **predecessor, int value) {
     if (node == NULL) return 0;
     if (node->value == value) {
         *predecessor = _remove_node(node);
         return 1;
     } else {
         if (value < node->value) {
-            return _remove_bin_tree(node->left, &(node->left), value);
+            return _bin_tree_remove(node->left, &(node->left), value);
         } else {
-            return _remove_bin_tree(node->right, &(node->right), value);
+            return _bin_tree_remove(node->right, &(node->right), value);
         }
     }
 }
 
-int remove_bin_tree(Bin_Tree *tree, int value) {
+int bin_tree_remove(Bin_Tree *tree, int value) {
     if (tree->root != NULL) {
-        return _remove_bin_tree(tree->root, &(tree->root), value);
+        return _bin_tree_remove(tree->root, &(tree->root), value);
     }
     return 0;   
 }
