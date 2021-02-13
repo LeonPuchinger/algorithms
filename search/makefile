@@ -23,5 +23,8 @@ build: example
 bin_tree:
 	$(BUILDSTR) -c $(SRC)/bin_search_tree.c -o $(BIN)/bin_search_tree.o
 
-example: bin_tree
-	$(BUILDSTR) $(SRC)/bin_search_tree.c $(SRC)/example.c -o $(BIN)/example
+avl_tree:
+	$(BUILDSTR) -c $(SRC)/avl_tree.c -o $(BIN)/avl_tree.o
+
+example: bin_tree avl_tree
+	$(BUILDSTR) $(BIN)/bin_search_tree.o $(BIN)/avl_tree.o $(SRC)/example.c -o $(BIN)/example
