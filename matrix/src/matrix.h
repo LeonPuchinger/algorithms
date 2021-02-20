@@ -15,4 +15,6 @@ void matrix_print(Matrix *matrix);
 
 Matrix *mult_naive(Matrix *a, Matrix *b);
 
+Matrix *mult_strassen(Matrix *a, Matrix *b);
+
 #endif

@@ -23,5 +23,8 @@ build: example
 naive:
 	$(BUILDSTR) -c $(SRC)/matrix.c -o $(BIN)/matrix.o
 
-example: naive
-	$(BUILDSTR) $(SRC)/example.c $(BIN)/matrix.o -o $(BIN)/example
+strassen:
+	$(BUILDSTR) -c $(SRC)/strassen.c -o $(BIN)/strassen.o
+
+example: naive strassen
+	$(BUILDSTR) -lm $(SRC)/example.c $(BIN)/matrix.o $(BIN)/strassen.o -o $(BIN)/example
